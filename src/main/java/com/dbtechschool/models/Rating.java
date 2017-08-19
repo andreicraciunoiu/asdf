@@ -1,21 +1,57 @@
 package com.dbtechschool.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class User {
+@Table(name = "RATINGS")
+public class Rating {
 	
 	@Id
+	@Column(name = "ID_RATING")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
-	
-	private String lastName;
-	private String firstName;
-	private String email;
-	private String username;
-	private String password;
-	
+	private int idRating;
+
+	private int rating;
+
+	@ManyToOne
+	@JoinColumn(name = "ID_SECTION")
+	private Section section;
+
+	@ManyToOne
+	@JoinColumn(name = "ID_ENROLLMENT")
+	private Enrollment enrollment;
+
+	public int getRating() {
+		return rating;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
+	public Section getSection() {
+		return section;
+	}
+
+	public void setSection(Section section) {
+		this.section = section;
+	}
+
+	public Enrollment getEnrollment() {
+		return enrollment;
+	}
+
+	public void setEnrollment(Enrollment enrollment) {
+		this.enrollment = enrollment;
+	}
+
+	@Override
+	public String toString() {
+		return "Rating{" +
+				"idRating=" + idRating +
+				", rating=" + rating +
+				", section=" + section +
+				", enrollment=" + enrollment +
+				'}';
+	}
 }
