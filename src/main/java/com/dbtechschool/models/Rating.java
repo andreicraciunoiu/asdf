@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "RATINGS")
 public class Rating {
-	
+
 	@Id
 	@Column(name = "ID_RATING")
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,11 +47,7 @@ public class Rating {
 
 	@Override
 	public String toString() {
-		return "Rating{" +
-				"idRating=" + idRating +
-				", rating=" + rating +
-				", section=" + section +
-				", enrollment=" + enrollment +
-				'}';
+		return "Rating{" + "idRating=" + idRating + ", rating=" + rating + ", section=" + section + ", enrollment="
+				+ enrollment + '}';
 	}
 }

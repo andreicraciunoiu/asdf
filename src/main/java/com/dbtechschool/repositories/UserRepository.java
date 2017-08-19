@@ -10,10 +10,11 @@ import com.dbtechschool.models.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
-	
+
 	@Modifying
 	@Transactional
 	@Query("update User u set u.username = ?1, u.firstName = ?2, u.lastName = ?3, u.email = ?4, u.password = ?5, u.type = ?6  where u.id = ?7")
-	int updateUserbyId(String username, String firstName, String lastName, String email, String password, char type, Long id);
-	
+	int updateUserbyId(String username, String firstName, String lastName, String email, String password, char type,
+			Long id);
+
 }

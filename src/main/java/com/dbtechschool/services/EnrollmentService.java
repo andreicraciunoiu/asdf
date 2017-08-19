@@ -7,14 +7,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class EnrollmentService {
 
-    @Autowired
-    private EnrollmentRepository enrollmentRepository;
+	@Autowired
+	private EnrollmentRepository enrollmentRepository;
 
-    public List<Enrollment> findAllEnrollments() {
-        return ((List<Enrollment>) enrollmentRepository.findAll());
-    }
+	public List<Enrollment> findAllEnrollments() {
+		return ((List<Enrollment>) enrollmentRepository.findAll());
+	}
 }
