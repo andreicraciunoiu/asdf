@@ -20,7 +20,8 @@ public class Section {
 	private String description;
 	private double ratingAvg;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "DAYS")
+	@ManyToOne
+	@JoinColumn(name = "ID_DAY")
 	private Day day;
 
 	public String getName() {
