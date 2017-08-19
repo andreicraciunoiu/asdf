@@ -1,9 +1,5 @@
 package com.dbtechschool.models;
 
-/**
- * Created by nicoleta on 8/19/2017.
- */
-
 import javax.persistence.*;
 
 @Entity
@@ -15,10 +11,12 @@ public class Enrollment {
     @Column(name = "ID_ENROLLMENT")
     private Long idEnrollment;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "USERS")
+    @ManyToOne
+	@JoinColumn(name = "ID_USER")
     private User user;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "COURSES")
+    @ManyToOne
+	@JoinColumn(name = "ID_COURSE")
     private Course course;
 
     public Long getIdEnrollment() {
@@ -46,14 +44,5 @@ public class Enrollment {
     public Enrollment setIdCourse(Course course) {
         this.course = course;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return "Enrollment{" +
-                "idEnrollment=" + idEnrollment +
-                ", idUser=" + user.toString() +
-                ", idCourse=" + course.toString() +
-                '}';
     }
 }
