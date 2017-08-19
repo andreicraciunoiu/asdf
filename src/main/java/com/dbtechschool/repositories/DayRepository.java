@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SectionRepository extends CrudRepository<Section, Long> {
+public interface DayRepository extends CrudRepository<Day, Long> {
 
 }
