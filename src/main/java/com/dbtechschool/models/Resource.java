@@ -1,7 +1,5 @@
 package com.dbtechschool.models;
 
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "resources")
 public class Resource {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID_RESOURCE")

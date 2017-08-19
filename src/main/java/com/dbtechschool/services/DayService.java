@@ -11,7 +11,7 @@ public class DayService {
 
 	@Autowired
 	private DayRepository dayRepository;
-	
+
 	public Day getById(Long id) {
 		return dayRepository.findOne(id);
 	}

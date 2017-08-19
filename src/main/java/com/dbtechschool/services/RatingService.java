@@ -10,10 +10,10 @@ import com.dbtechschool.repositories.RatingRepository;
 
 @Service
 public class RatingService {
-	
+
 	@Autowired
 	RatingRepository ratingRepository;
-	
+
 	public List<Rating> findAllCourses() {
 		return ((List<Rating>) ratingRepository.findAll());
 	}

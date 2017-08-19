@@ -6,12 +6,12 @@ import java.util.Date;
 @Entity
 @Table(name = "SECTIONS")
 public class Section {
-	
+
 	@Id
-	@Column(name="ID_SECTION")
+	@Column(name = "ID_SECTION")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idSection;
-	
+
 	private String name;
 	private Date start;
 	private Date end;
@@ -90,16 +90,8 @@ public class Section {
 
 	@Override
 	public String toString() {
-		return "Section{" +
-				"idSection=" + idSection +
-				", name='" + name + '\'' +
-				", start=" + start +
-				", end=" + end +
-				", room='" + room + '\'' +
-				", trainer='" + trainer + '\'' +
-				", description='" + description + '\'' +
-				", ratingAvg=" + ratingAvg +
-				", day=" + day +
-				'}';
+		return "Section{" + "idSection=" + idSection + ", name='" + name + '\'' + ", start=" + start + ", end=" + end
+				+ ", room='" + room + '\'' + ", trainer='" + trainer + '\'' + ", description='" + description + '\''
+				+ ", ratingAvg=" + ratingAvg + ", day=" + day + '}';
 	}
 }
