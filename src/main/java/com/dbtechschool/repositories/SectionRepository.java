@@ -3,9 +3,9 @@ package com.dbtechschool.repositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.dbtechschool.models.User;
+import com.dbtechschool.models.Section;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface SectionRepository extends CrudRepository<Section, Long> {
 
 }
