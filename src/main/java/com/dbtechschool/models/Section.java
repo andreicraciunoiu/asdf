@@ -12,12 +12,25 @@ public class Section {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idSection;
 
+	@Column(name = "NAME")
 	private String name;
+	
+	@Column(name = "START")
 	private Date start;
+	
+	@Column(name = "END")
 	private Date end;
+	
+	@Column(name = "ROOM")
 	private String room;
+	
+	@Column(name = "TRAINER")
 	private String trainer;
+	
+	@Column(name = "DESCRIPTION")
 	private String description;
+		
+	@Column(name = "RATINGAVG")
 	private double ratingAvg;
 
 	@ManyToOne

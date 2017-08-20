@@ -17,6 +17,6 @@ public class CourseController {
 
 	@RequestMapping("/courses")
 	public List<Course> listAllCourses() {
-		return courseService.findAllCourses();
+		return courseService.getAll();
 	}
 }
