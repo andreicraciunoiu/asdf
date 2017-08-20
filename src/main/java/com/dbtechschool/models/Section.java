@@ -29,7 +29,7 @@ public class Section {
 	
 	@Column(name = "DESCRIPTION")
 	private String description;
-		
+	
 	@Column(name = "RATINGAVG")
 	private double ratingAvg;
 
