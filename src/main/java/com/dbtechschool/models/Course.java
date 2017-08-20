@@ -38,7 +38,7 @@ public class Course {
 
 	public Course() {
 	}
-
+	
 	public Course(int id, String name, Date start, Date end, String tags, String description, char difficulty) {
 		super();
 		this.id = id;
