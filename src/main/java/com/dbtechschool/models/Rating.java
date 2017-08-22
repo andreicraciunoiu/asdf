@@ -11,6 +11,7 @@ public class Rating {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idRating;
 
+	@Column(name = "RATING")
 	private int rating;
 
 	@ManyToOne
