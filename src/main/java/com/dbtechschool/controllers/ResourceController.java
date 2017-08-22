@@ -1,51 +1,51 @@
 package com.dbtechschool.controllers;
 
+import com.dbtechschool.models.Course;
+import com.dbtechschool.models.Resource;
+import com.dbtechschool.models.Section;
+import com.dbtechschool.services.CourseService;
+import com.dbtechschool.services.ResourceService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.dbtechschool.models.Course;
-import com.dbtechschool.services.CourseService;
-
 @RestController
-public class CourseController {
+public class ResourceController {
 
 	@Autowired
-	CourseService courseService;
+	private ResourceService resourceService;
 
-	@RequestMapping(value = "/courses", method = RequestMethod.GET)
-	public List<Course> listAllCourses() {
-		return courseService.getAll();
+	@RequestMapping(value = "/resources", method = RequestMethod.GET)
+	public List<Resource> listAllCourses() {
+		return resourceService.getAll();
 	}
 	
-	@RequestMapping(value = "/course/{id}", method = RequestMethod.GET)
-	public Course getById(@PathVariable(value = "id") Integer id) {
-		return courseService.getById(id);
+	@RequestMapping(value = "/resource/{id}", method = RequestMethod.GET)
+	public Resource getById(@PathVariable(value = "id") Integer id) {
+		return resourceService.getById(id);
 	}
 
-	@RequestMapping(value = "/course/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/resource/{id}", method = RequestMethod.DELETE)
 	public void deleteById(@PathVariable(value = "id") Integer id) {
-		courseService.deleteById(id);
+		resourceService.deleteById(id);
 	}
 
-	@RequestMapping(value = "/clear/courses", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/clear/resources", method = RequestMethod.DELETE)
 	public void deleteAll() {
-		courseService.removeAll();
+		resourceService.removeAll();
 	}
 
-	@RequestMapping(value = "/course", method = RequestMethod.POST)
-	public void insertCourse(@RequestBody Course c) {
-		courseService.insertCourse(c);
+	@RequestMapping(value = "/resource", method = RequestMethod.POST)
+	public void insertResource(@RequestBody Resource c) {
+		resourceService.insertResource(c);
 	}
 
-	@RequestMapping(value = "/course/{id}", method = RequestMethod.PUT)
-	public void updateCourse(@RequestBody Course c, @PathVariable(value = "id") int id) {
-		courseService.updateCourseById(c.getName(), c.getStart(), c.getEnd(), c.getTags(), c.getDescription(),
-				c.getDifficulty(), id);
+	@RequestMapping(value = "/resource/{id}", method = RequestMethod.PUT)
+	public void updateResource(@RequestBody Resource c, @PathVariable(value = "id") int id) {
+		resourceService.updateResourceById(c.getName(), c.getLink(), id);
 	}
 }
