@@ -1,12 +1,12 @@
-package com.dbtechschool.services;
+package com.dbtechschool.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dbtechschool.models.Section;
-import com.dbtechschool.repositories.SectionRepository;
+import com.dbtechschool.model.Section;
+import com.dbtechschool.repository.SectionRepository;
 
 @Service
 public class SectionService {

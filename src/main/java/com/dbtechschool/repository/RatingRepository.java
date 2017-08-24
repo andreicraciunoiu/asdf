@@ -1,4 +1,4 @@
-package com.dbtechschool.repositories;
+package com.dbtechschool.repository;
 
 
 import org.springframework.data.jpa.repository.Modifying;
@@ -7,9 +7,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dbtechschool.models.Enrollment;
-import com.dbtechschool.models.Rating;
-import com.dbtechschool.models.Section;
+import com.dbtechschool.model.Enrollment;
+import com.dbtechschool.model.Rating;
+import com.dbtechschool.model.Section;
 
 @Repository
 public interface RatingRepository extends CrudRepository<Rating, Integer> {

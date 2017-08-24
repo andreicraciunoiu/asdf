@@ -1,7 +1,8 @@
 package com.dbtechschool.controller;
 
-import com.dbtechschool.models.Resource;
-import com.dbtechschool.services.ResourceService;
+import com.dbtechschool.model.Resource;
+import com.dbtechschool.service.ResourceService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

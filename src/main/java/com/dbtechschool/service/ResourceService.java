@@ -1,12 +1,12 @@
-package com.dbtechschool.services;
+package com.dbtechschool.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dbtechschool.models.Resource;
-import com.dbtechschool.repositories.ResourceRepository;
+import com.dbtechschool.model.Resource;
+import com.dbtechschool.repository.ResourceRepository;
 
 @Service
 public class ResourceService {

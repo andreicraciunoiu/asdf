@@ -1,7 +1,8 @@
 package com.dbtechschool.controller;
 
-import com.dbtechschool.models.Enrollment;
-import com.dbtechschool.services.EnrollmentService;
+import com.dbtechschool.model.Enrollment;
+import com.dbtechschool.service.EnrollmentService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

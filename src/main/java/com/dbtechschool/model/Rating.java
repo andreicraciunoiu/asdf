@@ -1,4 +1,4 @@
-package com.dbtechschool.models;
+package com.dbtechschool.model;
 
 import javax.persistence.*;
 

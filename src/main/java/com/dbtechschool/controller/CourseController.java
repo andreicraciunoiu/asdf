@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dbtechschool.models.Course;
-import com.dbtechschool.services.CourseService;
+import com.dbtechschool.model.Course;
+import com.dbtechschool.service.CourseService;
 
 @RestController
 public class CourseController {

@@ -1,4 +1,4 @@
-package com.dbtechschool.repositories;
+package com.dbtechschool.repository;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dbtechschool.models.Course;
+import com.dbtechschool.model.Course;
 
 @Repository
 public interface CourseRepository extends CrudRepository<Course, Integer> {

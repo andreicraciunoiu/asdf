@@ -1,7 +1,8 @@
-package com.dbtechschool.services;
+package com.dbtechschool.service;
 
-import com.dbtechschool.models.Enrollment;
-import com.dbtechschool.repositories.EnrollmentRepository;
+import com.dbtechschool.model.Enrollment;
+import com.dbtechschool.repository.EnrollmentRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

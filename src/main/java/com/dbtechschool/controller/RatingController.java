@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dbtechschool.models.Rating;
-import com.dbtechschool.services.RatingService;
+import com.dbtechschool.model.Rating;
+import com.dbtechschool.service.RatingService;
 
 @RestController
 public class RatingController {

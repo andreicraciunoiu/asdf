@@ -1,4 +1,4 @@
-package com.dbtechschool.services;
+package com.dbtechschool.service;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.dbtechschool.models.Enrollment;
-import com.dbtechschool.models.Rating;
-import com.dbtechschool.models.Section;
-import com.dbtechschool.repositories.RatingRepository;
+import com.dbtechschool.model.Enrollment;
+import com.dbtechschool.model.Rating;
+import com.dbtechschool.model.Section;
+import com.dbtechschool.repository.RatingRepository;
 
 @Service
 public class RatingService {

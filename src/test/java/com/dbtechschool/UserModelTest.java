@@ -2,7 +2,8 @@ package com.dbtechschool;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import com.dbtechschool.models.User;
+
+import com.dbtechschool.model.User;
 
 public class UserModelTest {
 

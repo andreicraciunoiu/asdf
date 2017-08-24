@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dbtechschool.models.User;
-import com.dbtechschool.services.UserService;
+import com.dbtechschool.model.User;
+import com.dbtechschool.service.UserService;
 
 @RestController
 public class UserController {
