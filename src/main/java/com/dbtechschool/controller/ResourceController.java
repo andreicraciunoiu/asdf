@@ -35,12 +35,12 @@ public class ResourceController {
 	}
 
 	@RequestMapping(value = "/resource", method = RequestMethod.POST)
-	public void insertResource(@RequestBody Resource c) {
-		resourceService.insertResource(c);
+	public void insertResource(@RequestBody Resource r) {
+		resourceService.insertResource(r);
 	}
 
 	@RequestMapping(value = "/resource/{id}", method = RequestMethod.PUT)
-	public void updateResource(@RequestBody Resource c, @PathVariable(value = "id") int id) {
-		resourceService.updateResourceById(c.getName(), c.getLink(), id);
+	public void updateResource(@RequestBody Resource r, @PathVariable(value = "id") int id) {
+		resourceService.updateResourceById(r.getName(), r.getLink(), id);
 	}
 }

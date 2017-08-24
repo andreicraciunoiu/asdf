@@ -13,7 +13,7 @@ public interface ResourceRepository extends CrudRepository<Resource, Integer> {
 
     @Modifying
     @Transactional
-    @Query("update Resource r set r.name = ?1, r.link = ?2 where c.id = ?3")
+    @Query("update Resource r set r.name = ?1, r.link = ?2 where r.id = ?3")
     int updateResourceById(String name, String link, int id);
 
 }
