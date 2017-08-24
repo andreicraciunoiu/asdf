@@ -1,4 +1,4 @@
-package com.dbtechschool.controllers;
+package com.dbtechschool.controller;
 
 import com.dbtechschool.models.Enrollment;
 import com.dbtechschool.services.EnrollmentService;

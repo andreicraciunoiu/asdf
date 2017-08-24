@@ -1,4 +1,4 @@
-package com.dbtechschool.controllers;
+package com.dbtechschool.controller;
 
 import java.util.List;
 
