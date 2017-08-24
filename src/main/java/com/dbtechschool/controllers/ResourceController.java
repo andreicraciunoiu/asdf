@@ -1,16 +1,10 @@
 package com.dbtechschool.controllers;
 
-import com.dbtechschool.models.Course;
 import com.dbtechschool.models.Resource;
-import com.dbtechschool.models.Section;
-import com.dbtechschool.services.CourseService;
 import com.dbtechschool.services.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.util.List;
 
 @RestController
@@ -20,8 +14,8 @@ public class ResourceController {
 	private ResourceService resourceService;
 
 	@RequestMapping(value = "/resources", method = RequestMethod.GET)
-	public List<Resource> listAllCourses() {
-		return resourceService.getAll();
+	public List<Resource> listAllResource() {
+		return resourceService.findAllResources();
 	}
 	
 	@RequestMapping(value = "/resource/{id}", method = RequestMethod.GET)
