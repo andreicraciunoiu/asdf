@@ -11,13 +11,13 @@ public class UserModelTest {
 	public void testGetSetUser() {
 
 		User TestUser = new User().setUsername("gica.punga").setFirstName("Gica").setLastName("Punga")
-				.setEmail("gica.punga@db.com").setPassword("qwe123").setType('a');
+				.setEmail("gica.punga@db.com").setPassword("qwe123").setEnabled(1);
 
 		assertEquals(TestUser.getUsername(), "gica.punga");
 		assertEquals(TestUser.getFirstName(), "Gica");
 		assertEquals(TestUser.getLastName(), "Punga");
 		assertEquals(TestUser.getPassword(), "qwe123");
 		assertEquals(TestUser.getEmail(), "gica.punga@db.com");
-		assertEquals(TestUser.getType(), 'a');
+		assertEquals(TestUser.getEnabled(), 1);
 	}
 }

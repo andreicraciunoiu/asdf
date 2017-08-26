@@ -38,8 +38,8 @@ public class UserService {
 	}
 
 	public void updateUserbyId(String username, String firstName, String lastName, String email, String password,
-			char type, Long id) {
+			int enabled, Long id) {
 		// TODO Auto-generated method stub
-		userRepository.updateUserbyId(username, firstName, lastName, email, password, type, id);
+		userRepository.updateUserbyId(username, firstName, lastName, email, password, enabled, id);
 	}
 }

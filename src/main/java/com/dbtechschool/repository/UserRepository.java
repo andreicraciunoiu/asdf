@@ -13,8 +13,10 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
 	@Modifying
 	@Transactional
-	@Query("update User u set u.username = ?1, u.firstName = ?2, u.lastName = ?3, u.email = ?4, u.password = ?5, u.type = ?6  where u.id = ?7")
-	int updateUserbyId(String username, String firstName, String lastName, String email, String password, char type,
+	@Query("update User u set u.username = ?1, u.firstName = ?2, u.lastName = ?3, u.email = ?4, u.password = ?5, u.enabled = ?6  where u.id = ?7")
+	int updateUserbyId(String username, String firstName, String lastName, String email, String password, int enabled,
 			Long id);
+	
+	public User findByUsername(String username);
 
 }
