@@ -31,8 +31,20 @@ public class User {
 	@Column(name = "PASSWORD")
 	private String password;
 
-	@Column(name = "TYPE")
-	private char type;
+	@Column(name = "enabled", columnDefinition = "INT DEFAULT 1")
+	private int enabled;
+	
+	public User() {}
+
+	public User(User user) {
+		this.id=user.id;
+		this.username=user.username;
+		this.firstName=user.firstName;
+		this.lastName=user.lastName;
+		this.email=user.email;
+		this.password=user.password;
+		this.enabled=user.enabled;
+	}
 
 	public Long getId() {
 		return id;
@@ -83,18 +95,13 @@ public class User {
 		return this;
 	}
 
-	public char getType() {
-		return type;
+	public int getEnabled() {
+		return enabled;
 	}
 
-	public User setType(char type) {
-		this.type = type;
+	public User setEnabled(int enabled) {
+		this.enabled = enabled;
 		return this;
 	}
 
-	@Override
-	public String toString() {
-		return "Users [id=" + id + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", email=" + email + ", password=" + password + ", type=" + type + "]";
-	}
 }
