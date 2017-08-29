@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dbtechschool.model.DatesContainer;
 import com.dbtechschool.model.Day;
 import com.dbtechschool.service.DayService;
 
@@ -30,6 +31,16 @@ public class DayController {
 	@RequestMapping(value = "/days/course/{id}", method = RequestMethod.GET)
 	public List<Day> getDaysByCourse(@PathVariable(value = "id") Long id) {
 		return dayService.getDaysByCourseId(id);
+	}
+	
+	@RequestMapping(value = "/day/date/{id}", method = RequestMethod.GET)
+	public String getDateById(@PathVariable(value = "id") Long id) {
+		return dayService.getDateByDayId(id);
+	}
+	
+	@RequestMapping(value = "/days/date", method = RequestMethod.GET)
+	public List<DatesContainer> getCoursesDates() {
+		return dayService.getDaysDates();
 	}
 
 	@RequestMapping(value = "/day/{id}", method = RequestMethod.DELETE)

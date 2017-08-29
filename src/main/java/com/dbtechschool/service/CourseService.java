@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dbtechschool.model.Course;
+import com.dbtechschool.model.DatesContainer;
 import com.dbtechschool.repository.CourseRepository;
 
 @Service
@@ -57,6 +58,18 @@ public class CourseService {
 		List<String> dates = new ArrayList<>();
 		dates.add(formatter.format(aux.getStart()));
 		dates.add(formatter.format(aux.getEnd()));
+		return dates;
+	}
+
+	public List<DatesContainer> getCoursesDates() {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		List<DatesContainer> dates = new ArrayList<>();
+		List<Course> courses = new ArrayList<>();
+		courseRepository.findAll().forEach(courses::add);
+		for(int i=0; i<courses.size(); i++) {
+			DatesContainer d = new DatesContainer(formatter.format(courses.get(i).getStart()), formatter.format(courses.get(i).getEnd()));
+			dates.add(d);
+		}
 		return dates;
 	}
 }

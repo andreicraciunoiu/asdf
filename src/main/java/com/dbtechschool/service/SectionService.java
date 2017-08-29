@@ -1,8 +1,11 @@
 package com.dbtechschool.service;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.dbtechschool.model.DatesContainer;
 import com.dbtechschool.model.Day;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,12 +19,10 @@ public class SectionService {
 	@Autowired
 	SectionRepository sectionRepository;
 
-	public List<Section> findAllCourses() {
-		return ((List<Section>) sectionRepository.findAll());
-	}
-
 	public List<Section> findAllSections() {
-		return ((List<Section>) sectionRepository.findAll());
+		List<Section> sections = new ArrayList<>();
+		sectionRepository.findAll().forEach(sections::add);
+		return sections;
 	}
 
 	public Section getById(Long id) {
@@ -46,7 +47,27 @@ public class SectionService {
 
 	public void updateSectionById(String name, Date start, Date end, String room, String trainer, String description,
 								  Double ratingAvg, Day day, Long id) {
-		// TODO Auto-generated method stub
 		sectionRepository.updateSectionbyId(name, start, end, room, trainer, description, ratingAvg, day, id);
+	}
+
+	public List<String> getHoursBySectionId(Long id) {
+		Section aux = sectionRepository.findOne(id);
+		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+		List<String> hours = new ArrayList<>();
+		hours.add(formatter.format(aux.getStart()));
+		hours.add(formatter.format(aux.getEnd()));
+		return hours;
+	}
+
+	public List<DatesContainer> getSectionsHours() {
+		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+		List<DatesContainer> dates = new ArrayList<>();
+		List<Section> sections = new ArrayList<>();
+		sectionRepository.findAll().forEach(sections::add);
+		for(int i=0; i<sections.size(); i++) {
+			DatesContainer d = new DatesContainer(formatter.format(sections.get(i).getStart()), formatter.format(sections.get(i).getEnd()));
+			dates.add(d);
+		}
+		return dates;
 	}
 }

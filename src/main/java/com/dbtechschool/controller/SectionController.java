@@ -1,5 +1,6 @@
 package com.dbtechschool.controller;
 
+import com.dbtechschool.model.DatesContainer;
 import com.dbtechschool.model.Section;
 import com.dbtechschool.service.SectionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,16 @@ public class SectionController {
     public List<Section> getByDay(@PathVariable(value = "dayid") Long dayid) {
         return ((List<Section>) sectionService.getByDay(dayid));
     }
+    
+    @RequestMapping(value = "/sections/hours", method = RequestMethod.GET)
+	public List<DatesContainer> getSectionsHours() {
+		return sectionService.getSectionsHours();
+	}
+    
+    @RequestMapping(value = "/section/hours/{id}", method = RequestMethod.GET)
+	public List<String> getDatesById(@PathVariable(value = "id") Long id) {
+		return sectionService.getHoursBySectionId(id);
+	}
 
     @RequestMapping(value = "/section/{id}", method = RequestMethod.DELETE)
     public void deleteById(@PathVariable(value = "id") Long id) {

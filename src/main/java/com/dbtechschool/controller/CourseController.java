@@ -1,7 +1,5 @@
 package com.dbtechschool.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dbtechschool.model.Course;
+import com.dbtechschool.model.DatesContainer;
 import com.dbtechschool.service.CourseService;
 
 @RestController
@@ -38,6 +37,11 @@ public class CourseController {
 	@RequestMapping(value = "/courses/user/{id}", method = RequestMethod.GET)
 	public List<Course> getDaysByCourse(@PathVariable(value = "id") Long id) {
 		return courseService.getCoursesByUserId(id);
+	}
+	
+	@RequestMapping(value = "/courses/dates", method = RequestMethod.GET)
+	public List<DatesContainer> getCoursesDates() {
+		return courseService.getCoursesDates();
 	}
 	
 	@RequestMapping(value = "/trainers/course/{id}", method = RequestMethod.GET)
