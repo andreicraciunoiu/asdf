@@ -28,7 +28,7 @@ public class SectionController {
     }
 
     @RequestMapping(value = "/day/{dayid}/sections", method = RequestMethod.GET)
-    public List<Section> getByDay(@PathVariable(value = "dayid") int dayid) {
+    public List<Section> getByDay(@PathVariable(value = "dayid") Long dayid) {
         return ((List<Section>) sectionService.getByDay(dayid));
     }
 

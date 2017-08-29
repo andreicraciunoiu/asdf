@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public interface SectionRepository extends CrudRepository<Section, Long> {
     @Query("select s from Section s where s.day.id = :id")
-    List<Section> getByDay(@Param("id") int id);
+    List<Section> getByDay(@Param("id") Long id);
 
     @Modifying
     @Transactional

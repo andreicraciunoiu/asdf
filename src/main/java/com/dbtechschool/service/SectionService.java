@@ -28,7 +28,7 @@ public class SectionService {
 		return sectionRepository.findOne(id);
 	}
 
-	public List<Section> getByDay(int id) {
+	public List<Section> getByDay(Long id) {
 		return ((List<Section>) sectionRepository.getByDay(id));
 	}
 
