@@ -8,7 +8,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dbtechschool.model.Course;
 import com.dbtechschool.model.DatesContainer;
 import com.dbtechschool.model.Day;
 import com.dbtechschool.repository.DayRepository;
