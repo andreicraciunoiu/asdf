@@ -27,6 +27,47 @@ public class Day {
 	private Date date;
 
 	@ManyToOne
-	@JoinColumn(name = "ID_COURSE")
+	@JoinColumn(name = "ID_COURSE", referencedColumnName = "ID_COURSE")
 	private Course course;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public Day setId(Long id) {
+		this.id = id;
+		return this;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public Day setName(String name) {
+		this.name = name;
+		return this;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public Day setDate(Date date) {
+		this.date = date;
+		return this;
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public Day setCourse(Course course) {
+		this.course = course;
+		return this;
+	}
+
+	@Override
+	public String toString() {
+		return "Day [id=" + id + ", name=" + name + ", date=" + date + ", course=" + course + "]";
+	}
 }

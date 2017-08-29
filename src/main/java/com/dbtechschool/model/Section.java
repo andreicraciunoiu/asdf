@@ -10,7 +10,7 @@ public class Section {
 	@Id
 	@Column(name = "ID_SECTION")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long idSection;
+	private Long id;
 
 	@Column(name = "NAME")
 	private String name;
@@ -103,7 +103,7 @@ public class Section {
 
 	@Override
 	public String toString() {
-		return "Section{" + "idSection=" + idSection + ", name='" + name + '\'' + ", start=" + start + ", end=" + end
+		return "Section{" + "idSection=" + id + ", name='" + name + '\'' + ", start=" + start + ", end=" + end
 				+ ", room='" + room + '\'' + ", trainer='" + trainer + '\'' + ", description='" + description + '\''
 				+ ", ratingAvg=" + ratingAvg + ", day=" + day + '}';
 	}
