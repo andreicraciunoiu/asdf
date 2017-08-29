@@ -10,7 +10,7 @@ public class Section {
 	@Id
 	@Column(name = "ID_SECTION")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idSection;
+	private Long idSection;
 
 	@Column(name = "NAME")
 	private String name;
