@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -15,20 +17,24 @@ public class UserRole {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="user_role_id")
-	private Long userroleid;
+	private Long id;
 	
 //	@Column(name="id_user")
 //	private Long userid;
+	
+	@OneToOne
+	@JoinColumn(name = "user_id", referencedColumnName = "ID_USER")
+	private User user;
 	
 	@Column(name="role")
 	private String role;
 
 	public Long getUserroleid() {
-		return userroleid;
+		return id;
 	}
 
 	public void setUserroleid(Long userroleid) {
-		this.userroleid = userroleid;
+		this.id = userroleid;
 	}
 
 //	public Long getUserid() {
