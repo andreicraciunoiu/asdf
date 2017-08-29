@@ -17,8 +17,8 @@ public class UserRole {
 	@Column(name="user_role_id")
 	private Long userroleid;
 	
-	@Column(name="id_user")
-	private Long userid;
+//	@Column(name="id_user")
+//	private Long userid;
 	
 	@Column(name="role")
 	private String role;
@@ -31,13 +31,13 @@ public class UserRole {
 		this.userroleid = userroleid;
 	}
 
-	public Long getUserid() {
-		return userid;
-	}
-
-	public void setUserid(Long userid) {
-		this.userid = userid;
-	}
+//	public Long getUserid() {
+//		return userid;
+//	}
+//
+//	public void setUserid(Long userid) {
+//		this.userid = userid;
+//	}
 
 	public String getRole() {
 		return role;

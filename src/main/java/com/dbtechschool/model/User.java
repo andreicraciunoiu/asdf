@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,9 +32,16 @@ public class User {
 
 	@Column(name = "PASSWORD")
 	private String password;
+	
+	@Column(name = "TAGS")
+	private String tags;
 
 	@Column(name = "enabled", columnDefinition = "INT DEFAULT 1")
 	private int enabled;
+	
+	@OneToOne
+	@JoinColumn(name = "user_role_id", referencedColumnName = "ID")
+	private UserRole userRole;
 	
 	public User() {}
 
@@ -101,6 +110,15 @@ public class User {
 
 	public User setEnabled(int enabled) {
 		this.enabled = enabled;
+		return this;
+	}
+	
+	public String getTags() {
+		return tags;
+	}
+
+	public User setTags(String tags) {
+		this.tags = tags;
 		return this;
 	}
 

@@ -45,6 +45,6 @@ public class UserController {
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.PUT)
 	public void updatetUser(@RequestBody User u, @PathVariable(value = "id") Long id) {
 		userService.updateUserbyId(u.getUsername(), u.getFirstName(), u.getLastName(), u.getEmail(), u.getPassword(),
-				u.getEnabled(), id);
+				u.getEnabled(), u.getTags(), id);
 	}
 }
