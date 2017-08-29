@@ -19,13 +19,10 @@ public class UserRole {
 	@Column(name="user_role_id")
 	private Long id;
 	
-//	@Column(name="id_user")
-//	private Long userid;
-	
 	@OneToOne
-	@JoinColumn(name = "user_id", referencedColumnName = "ID_USER")
+	@JoinColumn(name = "id_user", referencedColumnName = "ID_USER")
 	private User user;
-	
+
 	@Column(name="role")
 	private String role;
 
@@ -37,14 +34,6 @@ public class UserRole {
 		this.id = userroleid;
 	}
 
-//	public Long getUserid() {
-//		return userid;
-//	}
-//
-//	public void setUserid(Long userid) {
-//		this.userid = userid;
-//	}
-
 	public String getRole() {
 		return role;
 	}
@@ -53,4 +42,15 @@ public class UserRole {
 		this.role = role;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 }
