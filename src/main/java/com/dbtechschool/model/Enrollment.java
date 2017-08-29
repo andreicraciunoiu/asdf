@@ -9,7 +9,7 @@ public class Enrollment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID_ENROLLMENT")
-	private Long idEnrollment;
+	private Long id;
 
 	@ManyToOne
 	@JoinColumn(name = "ID_USER")
@@ -20,11 +20,11 @@ public class Enrollment {
 	private Course course;
 
 	public Long getIdEnrollment() {
-		return idEnrollment;
+		return id;
 	}
 
 	public Enrollment setIdEnrollment(Long id_enrollment) {
-		this.idEnrollment = id_enrollment;
+		this.id = id_enrollment;
 		return this;
 	}
 

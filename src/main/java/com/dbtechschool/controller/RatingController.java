@@ -24,12 +24,12 @@ public class RatingController {
 	}
 	
 	@RequestMapping(value = "/rating/{id}", method = RequestMethod.GET)
-	public Rating getById(@PathVariable(value = "id") Integer id) {
+	public Rating getById(@PathVariable(value = "id") Long id) {
 		return ratingService.getById(id);
 	}
 
 	@RequestMapping(value = "/rating/{id}", method = RequestMethod.DELETE)
-	public void deleteById(@PathVariable(value = "id") Integer id) {
+	public void deleteById(@PathVariable(value = "id") Long id) {
 		ratingService.deleteById(id);
 	}
 
@@ -44,7 +44,7 @@ public class RatingController {
 	}
 
 	@RequestMapping(value = "/rating/{id}", method = RequestMethod.PUT)
-	public void updateRating(@RequestBody Rating r, @PathVariable(value = "id") int id) {
+	public void updateRating(@RequestBody Rating r, @PathVariable(value = "id") Long id) {
 		ratingService.updateRatingById(r.getRating(), r.getSection(), r.getEnrollment(), id);
 	}
 	

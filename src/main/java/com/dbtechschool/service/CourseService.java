@@ -19,11 +19,11 @@ public class CourseService {
 		return ((List<Course>) courseRepository.findAll());
 	}
 	
-	public Course getById(int id) {
+	public Course getById(Long id) {
 		return courseRepository.findOne(id);
 	}
 	
-	public void deleteById(int id) {
+	public void deleteById(Long id) {
 		courseRepository.delete(id);
 	}
 	
@@ -35,7 +35,7 @@ public class CourseService {
 		courseRepository.save(newCourse);
 	}
 	
-	public void updateCourseById(String name, Date start, Date end, String tags, String description, char difficulty, int id) {
+	public void updateCourseById(String name, Date start, Date end, String tags, String description, char difficulty, Long id) {
 		courseRepository.updateCourseById(name, start, end, tags, description, difficulty, id);
 	}
 }

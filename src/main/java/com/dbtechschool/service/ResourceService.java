@@ -18,11 +18,11 @@ public class ResourceService {
 		return ((List<Resource>) resourceRepository.findAll());
 	}
 
-	public Resource getById(int id) {
+	public Resource getById(Long id) {
 		return resourceRepository.findOne(id);
 	}
 
-	public void deleteById(int id) {
+	public void deleteById(Long id) {
 		resourceRepository.delete(id);
 	}
 
@@ -34,7 +34,7 @@ public class ResourceService {
 		resourceRepository.save(newResource);
 	}
 
-	public void updateResourceById(String name, String link, int id) {
+	public void updateResourceById(String name, String link, Long id) {
         resourceRepository.updateResourceById(name, link, id);
     }
 }

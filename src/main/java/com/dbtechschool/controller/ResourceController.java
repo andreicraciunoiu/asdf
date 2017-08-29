@@ -20,12 +20,12 @@ public class ResourceController {
 	}
 	
 	@RequestMapping(value = "/resource/{id}", method = RequestMethod.GET)
-	public Resource getById(@PathVariable(value = "id") Integer id) {
+	public Resource getById(@PathVariable(value = "id") Long id) {
 		return resourceService.getById(id);
 	}
 
 	@RequestMapping(value = "/resource/{id}", method = RequestMethod.DELETE)
-	public void deleteById(@PathVariable(value = "id") Integer id) {
+	public void deleteById(@PathVariable(value = "id") Long id) {
 		resourceService.deleteById(id);
 	}
 
@@ -40,7 +40,7 @@ public class ResourceController {
 	}
 
 	@RequestMapping(value = "/resource/{id}", method = RequestMethod.PUT)
-	public void updateResource(@RequestBody Resource r, @PathVariable(value = "id") int id) {
+	public void updateResource(@RequestBody Resource r, @PathVariable(value = "id") Long id) {
 		resourceService.updateResourceById(r.getName(), r.getLink(), id);
 	}
 }

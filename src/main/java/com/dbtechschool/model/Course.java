@@ -16,7 +16,7 @@ public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID_COURSE")
-	private int id;
+	private Long id;
 
 	@Column(name = "NAME")
 	private String name;
@@ -39,7 +39,7 @@ public class Course {
 	public Course() {
 	}
 	
-	public Course(int id, String name, Date start, Date end, String tags, String description, char difficulty) {
+	public Course(Long id, String name, Date start, Date end, String tags, String description, char difficulty) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -50,11 +50,11 @@ public class Course {
 		this.difficulty = difficulty;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -21,11 +21,11 @@ public class RatingService {
 		return ((List<Rating>) ratingRepository.findAll());
 	}
 	
-	public Rating getById(int id) {
+	public Rating getById(Long id) {
 		return ratingRepository.findOne(id);
 	}
 	
-	public void deleteById(int id) {
+	public void deleteById(Long id) {
 		ratingRepository.delete(id);
 	}
 	
@@ -37,7 +37,7 @@ public class RatingService {
 		ratingRepository.save(r);
 	}
 	
-	public void updateRatingById(Integer rating, Section section, Enrollment enrollment, int id) {
+	public void updateRatingById(Integer rating, Section section, Enrollment enrollment, Long id) {
 		ratingRepository.updateRatingById(rating, section, enrollment, id);
 	}
 	

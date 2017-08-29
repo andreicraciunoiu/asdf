@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dbtechschool.model.Resource;
 
 @Repository
-public interface ResourceRepository extends CrudRepository<Resource, Integer> {
+public interface ResourceRepository extends CrudRepository<Resource, Long> {
 
     @Modifying
     @Transactional
     @Query("update Resource r set r.name = ?1, r.link = ?2 where r.id = ?3")
-    int updateResourceById(String name, String link, int id);
+    int updateResourceById(String name, String link, Long id);
 
 }

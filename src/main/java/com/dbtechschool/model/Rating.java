@@ -9,7 +9,7 @@ public class Rating {
 	@Id
 	@Column(name = "ID_RATING")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idRating;
+	private Long id;
 
 	@Column(name = "RATING")
 	private int rating;
@@ -48,7 +48,7 @@ public class Rating {
 
 	@Override
 	public String toString() {
-		return "Rating{" + "idRating=" + idRating + ", rating=" + rating + ", section=" + section + ", enrollment="
+		return "Rating{" + "idRating=" + id + ", rating=" + rating + ", section=" + section + ", enrollment="
 				+ enrollment + '}';
 	}
 }

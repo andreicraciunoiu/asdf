@@ -24,12 +24,12 @@ public class CourseController {
 	}
 	
 	@RequestMapping(value = "/course/{id}", method = RequestMethod.GET)
-	public Course getById(@PathVariable(value = "id") Integer id) {
+	public Course getById(@PathVariable(value = "id") Long id) {
 		return courseService.getById(id);
 	}
 
 	@RequestMapping(value = "/course/{id}", method = RequestMethod.DELETE)
-	public void deleteById(@PathVariable(value = "id") Integer id) {
+	public void deleteById(@PathVariable(value = "id") Long id) {
 		courseService.deleteById(id);
 	}
 
@@ -44,7 +44,7 @@ public class CourseController {
 	}
 
 	@RequestMapping(value = "/course/{id}", method = RequestMethod.PUT)
-	public void updateCourse(@RequestBody Course c, @PathVariable(value = "id") int id) {
+	public void updateCourse(@RequestBody Course c, @PathVariable(value = "id") Long id) {
 		courseService.updateCourseById(c.getName(), c.getStart(), c.getEnd(), c.getTags(), c.getDescription(),
 				c.getDifficulty(), id);
 	}

@@ -12,11 +12,11 @@ import com.dbtechschool.model.Rating;
 import com.dbtechschool.model.Section;
 
 @Repository
-public interface RatingRepository extends CrudRepository<Rating, Integer> {
+public interface RatingRepository extends CrudRepository<Rating, Long> {
 
 	@Modifying
 	@Transactional
 	@Query("update Rating r set r.rating = ?1, r.section = ?2, r.enrollment = ?3 where r.id = ?7")
-	int updateRatingById(Integer rating, Section section, Enrollment enrollment, int id);
+	int updateRatingById(Integer rating, Section section, Enrollment enrollment, Long id);
 
 }

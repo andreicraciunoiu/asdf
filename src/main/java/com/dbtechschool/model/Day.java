@@ -18,7 +18,7 @@ public class Day {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID_DAY")
-	private int id;
+	private Long id;
 
 	@Column(name = "NAME")
 	private String name;

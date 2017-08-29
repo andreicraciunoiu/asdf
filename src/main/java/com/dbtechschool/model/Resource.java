@@ -16,7 +16,7 @@ public class Resource {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID_RESOURCE")
-	private int id;
+	private Long id;
 
 	@Column(name = "NAME")
 	private String name;
@@ -28,11 +28,11 @@ public class Resource {
 	@JoinColumn(name = "ID_SECTION")
 	private Section section;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
