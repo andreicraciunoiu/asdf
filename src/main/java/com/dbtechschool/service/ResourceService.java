@@ -37,4 +37,8 @@ public class ResourceService {
 	public void updateResourceById(String name, String link, Long id) {
         resourceRepository.updateResourceById(name, link, id);
     }
+
+	public List<Resource> getResourcesBySectionId(Long id) {
+		return resourceRepository.getResourcesBySectionId(id);
+	}
 }

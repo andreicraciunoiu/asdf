@@ -23,6 +23,11 @@ public class ResourceController {
 	public Resource getById(@PathVariable(value = "id") Long id) {
 		return resourceService.getById(id);
 	}
+	
+	@RequestMapping(value = "/resources/section/{id}", method = RequestMethod.GET)
+	public List<Resource> getDaysByCourse(@PathVariable(value = "id") Long id) {
+		return resourceService.getResourcesBySectionId(id);
+	}
 
 	@RequestMapping(value = "/resource/{id}", method = RequestMethod.DELETE)
 	public void deleteById(@PathVariable(value = "id") Long id) {
