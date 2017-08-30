@@ -17,4 +17,8 @@ public class EnrollmentService {
 	public List<Enrollment> findAllEnrollments() {
 		return ((List<Enrollment>) enrollmentRepository.findAll());
 	}
+
+	public void insertEnrollment(Long id_c, Long id_u) {
+		enrollmentRepository.insertEnrollment(id_c, id_u);
+	}
 }

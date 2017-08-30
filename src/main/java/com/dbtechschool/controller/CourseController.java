@@ -35,8 +35,13 @@ public class CourseController {
 	}
 	
 	@RequestMapping(value = "/courses/user/{id}", method = RequestMethod.GET)
-	public List<Course> getDaysByCourse(@PathVariable(value = "id") Long id) {
+	public List<Course> getUserCourses(@PathVariable(value = "id") Long id) {
 		return courseService.getCoursesByUserId(id);
+	}
+	
+	@RequestMapping(value = "/courses/trainer/{id}", method = RequestMethod.GET)
+	public List<Course> getTrainerCourses(@PathVariable(value = "id") Long id) {
+		return courseService.getCoursesByTrainerId(id);
 	}
 	
 	@RequestMapping(value = "/courses/dates", method = RequestMethod.GET)

@@ -72,4 +72,9 @@ public class CourseService {
 		}
 		return dates;
 	}
+
+	public List<Course> getCoursesByTrainerId(Long id) {
+		// TODO Auto-generated method stub
+		return courseRepository.getCoursesByTrainerId(id);
+	}
 }
