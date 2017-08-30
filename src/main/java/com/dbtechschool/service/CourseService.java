@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.dbtechschool.model.Course;
 import com.dbtechschool.model.DatesContainer;
+import com.dbtechschool.model.User;
 import com.dbtechschool.repository.CourseRepository;
 
 @Service
@@ -76,5 +77,23 @@ public class CourseService {
 	public List<Course> getCoursesByTrainerId(Long id) {
 		// TODO Auto-generated method stub
 		return courseRepository.getCoursesByTrainerId(id);
+	}
+
+	public List<Course> getRecommendedCourses(Long id) {
+		// TODO Auto-generated method stub
+		List<Course> courses = courseRepository.getUnenrolledCourses(id);
+		List<Course> recCourses = new ArrayList<>();
+		User user = courseRepository.getUser(id);
+		if (user != null) {
+			String[] user_tags = user.getTags().split(",");
+			for (int i=0; i<courses.size(); i++) {
+				String[] course_tags = courses.get(i).getTags().split(",");
+				for(int j=0; j<user_tags.length; j++)
+					for(int k=0; k<course_tags.length; k++)
+						if (user_tags[j].toLowerCase().equals(course_tags[k].toLowerCase()))
+							recCourses.add(courses.get(i));
+			}
+		}
+		return recCourses;
 	}
 }

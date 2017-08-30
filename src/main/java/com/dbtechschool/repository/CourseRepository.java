@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dbtechschool.model.Course;
+import com.dbtechschool.model.User;
 
 @Repository
 public interface CourseRepository extends CrudRepository<Course, Long> {
@@ -30,4 +31,12 @@ public interface CourseRepository extends CrudRepository<Course, Long> {
 	@Transactional
 	@Query(value = "select * from courses c, users u, sections s, days d where u.id_user = ?1 and c.ID_COURSE = d.id_course and d.id_day = s.id_day and s.trainer = CONCAT(u.firstname , ' ', u.lastname)", nativeQuery = true)
 	List<Course> getCoursesByTrainerId(Long id);
+	
+	@Transactional
+	@Query(value = "select * from courses where ID_COURSE not in (select ee.ID_COURSE from enrollments ee where ee.id_user=?1)", nativeQuery = true)
+	List<Course> getUnenrolledCourses(Long id);
+	
+	@Transactional
+	@Query("select u from User u where u.id = ?1")
+	User getUser(Long id);
 }

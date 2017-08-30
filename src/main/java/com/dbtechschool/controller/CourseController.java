@@ -54,6 +54,11 @@ public class CourseController {
 		return courseService.getTrainersByCourseId(id);
 	}
 	
+	@RequestMapping(value = "/courses/user/recommendation/{id}", method = RequestMethod.GET)
+	public List<Course> getUserRecommendations(@PathVariable(value = "id") Long id) {
+		return courseService.getRecommendedCourses(id);
+	}
+	
 	@RequestMapping(value = "/course/{id}", method = RequestMethod.DELETE)
 	public void deleteById(@PathVariable(value = "id") Long id) {
 		courseService.deleteById(id);
