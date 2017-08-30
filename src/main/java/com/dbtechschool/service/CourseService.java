@@ -20,7 +20,7 @@ public class CourseService {
 	private CourseRepository courseRepository;
 
 	public List<Course> getAll() {
-		return ((List<Course>) courseRepository.findAll());
+		return courseRepository.getCourses();
 	}
 	
 	public Course getById(Long id) {
@@ -53,12 +53,12 @@ public class CourseService {
 		return courseRepository.getTrainersByCourseId(id);
 	}
 	
-	public List<String> getDatesByCourseId(Long id) {
+	public DatesContainer getDatesByCourseId(Long id) {
 		Course aux = courseRepository.findOne(id);
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-		List<String> dates = new ArrayList<>();
-		dates.add(formatter.format(aux.getStart()));
-		dates.add(formatter.format(aux.getEnd()));
+		DatesContainer dates = new DatesContainer(formatter.format(aux.getStart()), formatter.format(aux.getEnd()));
+//		dates.add(formatter.format(aux.getStart()));
+//		dates.add(formatter.format(aux.getEnd()));
 		return dates;
 	}
 

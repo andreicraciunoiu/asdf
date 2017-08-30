@@ -39,4 +39,8 @@ public interface CourseRepository extends CrudRepository<Course, Long> {
 	@Transactional
 	@Query("select u from User u where u.id = ?1")
 	User getUser(Long id);
+	
+	@Transactional
+	@Query("select c from Course c order by c.start ASC")
+	List<Course> getCourses();
 }

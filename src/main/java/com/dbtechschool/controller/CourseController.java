@@ -30,7 +30,7 @@ public class CourseController {
 	}
 	
 	@RequestMapping(value = "/course/dates/{id}", method = RequestMethod.GET)
-	public List<String> getDatesById(@PathVariable(value = "id") Long id) {
+	public DatesContainer getDatesById(@PathVariable(value = "id") Long id) {
 		return courseService.getDatesByCourseId(id);
 	}
 	
