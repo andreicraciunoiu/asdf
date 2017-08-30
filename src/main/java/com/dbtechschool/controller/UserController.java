@@ -1,6 +1,8 @@
 package com.dbtechschool.controller;
 
+
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,8 +45,14 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.PUT)
-	public void updatetUser(@RequestBody User u, @PathVariable(value = "id") Long id) {
+	public void updateUser(@RequestBody User u, @PathVariable(value = "id") Long id) {
 		userService.updateUserbyId(u.getUsername(), u.getFirstName(), u.getLastName(), u.getEmail(), u.getPassword(),
 				u.getEnabled(), u.getTags(), id);
+	}
+	
+	@RequestMapping(value = "/user/{id}/{role}", method = RequestMethod.PUT)
+	public void updateUserAndRole(@RequestBody User u, @PathVariable(value = "id") Long id, @PathVariable(value = "role") String role) {
+		userService.updateUserAndRolebyId(u.getUsername(), u.getFirstName(), u.getLastName(), u.getEmail(), u.getPassword(),
+				u.getEnabled(), u.getTags(), id, role);
 	}
 }
