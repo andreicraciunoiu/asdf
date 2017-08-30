@@ -24,6 +24,7 @@ public class UserService {
 	}
 
 	public void deleteById(Long id) {
+		userRepository.deleteRole(id);
 		userRepository.delete(id);
 	}
 
