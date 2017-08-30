@@ -28,6 +28,6 @@ public interface CourseRepository extends CrudRepository<Course, Long> {
 	List<String> getTrainersByCourseId(Long id);
 
 	@Transactional
-	@Query("select c from Course c, Day d, Section s, User u where u.id = ?1 and c.id = d.course.id and d.id = s.day.id and s.trainer = u.firstName + ' ' + u.lastName")
+	@Query(value = "select * from courses c, users u, sections s, days d where u.id_user = ?1 and c.ID_COURSE = d.id_course and d.id_day = s.id_day and s.trainer = CONCAT(u.firstname , ' ', u.lastname)", nativeQuery = true)
 	List<Course> getCoursesByTrainerId(Long id);
 }
