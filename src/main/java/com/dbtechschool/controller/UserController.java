@@ -37,9 +37,9 @@ public class UserController {
 		userService.removeAll();
 	}
 
-	@RequestMapping(value = "/user", method = RequestMethod.POST)
-	public void insertUser(@RequestBody User u) {
-		userService.insertUser(u);
+	@RequestMapping(value = "/user/{role}", method = RequestMethod.POST)
+	public void insertUser(@RequestBody User u, @PathVariable(value = "role") String role) {
+		userService.insertUser(u, role);
 	}
 
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.PUT)

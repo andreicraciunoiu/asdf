@@ -18,4 +18,9 @@ public interface UserRepository extends CrudRepository<User, Long> {
 	
 	public User findByUsername(String username);
 
+	@Modifying
+	@Transactional
+	@Query(value = "insert into user_roles (id_user, role) values (?1, ?2)", nativeQuery = true)
+	int insertUserRole(Long id, String role);
+
 }

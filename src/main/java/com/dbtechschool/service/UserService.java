@@ -33,8 +33,9 @@ public class UserService {
 		userRepository.deleteAll();
 	}
 
-	public void insertUser(User newUser) {
+	public void insertUser(User newUser, String role) {
 		userRepository.save(newUser);
+		userRepository.insertUserRole(newUser.getId(), role);
 	}
 
 	public void updateUserbyId(String username, String firstName, String lastName, String email, String password,
