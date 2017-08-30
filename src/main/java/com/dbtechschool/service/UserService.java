@@ -1,6 +1,6 @@
 package com.dbtechschool.service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +16,7 @@ public class UserService {
 	private UserRepository userRepository;
 
 	public List<User> getAll() {
-		List<User> users = new ArrayList<>();
-		userRepository.findAll().forEach(users::add);
-		return users;
+		return (List<User>) userRepository.findAll();
 	}
 
 	public User getById(Long id) {
@@ -42,5 +40,14 @@ public class UserService {
 			int enabled, String tags, Long id) {
 		// TODO Auto-generated method stub
 		userRepository.updateUserbyId(username, firstName, lastName, email, password, enabled, tags, id);
+	}
+
+	public void updateUserAndRolebyId(String username, String firstName, String lastName, String email, String password,
+			int enabled, String tags, Long id, String role) {
+		// TODO Auto-generated method stub
+		userRepository.updateUserbyId(username, firstName, lastName, email, password,
+				enabled, tags, id);
+		userRepository.updateUserRolebyId(role, id);
+		
 	}
 }
