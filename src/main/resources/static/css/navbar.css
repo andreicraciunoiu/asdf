@@ -1,0 +1,109 @@
+/* === NAVIGATION === */
+
+nav {
+    margin: 0 auto;
+    background: #0d77b6;
+    list-style: none;
+}
+
+nav a {
+    color: #fff;
+}
+
+nav a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: #fff;
+}
+
+nav img {
+    height: 50px;
+}
+
+nav input[type="text"] {
+    width: 200px;
+    text-align: right;
+    color: #000;
+}
+
+
+
+nav ul {
+    text-align: center;
+    margin: 0;
+    padding: 0
+}
+
+nav ul li{
+    display: inline-block;
+    padding: 10px;
+    background: #0d77b6;
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 17px;
+    margin: 0;
+}
+
+nav ul li:hover {
+    background-color: #085c8e;
+}
+
+nav ul li:nth-child(5):hover {
+    background-color: #0d77b6;
+}
+
+/**************************Tooltip starts*************************/
+
+.tmfaTooltipMenu{
+    left: 0px;
+    width: 91px;
+}
+
+.tmfaTooltipMenu ul li{
+    color: #fff;
+    text-align: left;
+    padding: 10px 30px 10px 10px;
+    font-family: sans-serif;
+    font-size: 15px;
+    width: 125px;
+    background: #0d77b6;
+}
+
+.tmfaTooltipMenu ul li:hover{
+    background: #085c8e;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/**************************Tooltip ends*************************/
+
+.tmfaTooltip {
+    position: relative;
+    text-align: left;
+    display: inline-block;
+}
+
+.tmfaTooltipMenu {
+    visibility: hidden;
+    position: absolute;
+}
+
+nav ul li:hover .tmfaTooltipMenu {
+    visibility: visible;
+    cursor: pointer;
+}
+
+.tmfaBottomSide {
+    top: 100%;
+}
+
+.tmfaTooltipMenu::after {
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+}

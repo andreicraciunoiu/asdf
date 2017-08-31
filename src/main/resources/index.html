@@ -4,9 +4,44 @@
     <meta charset="utf-8" />
     <title>AngularJS User Registration and Login Example & Tutorial</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="footer.css" />
     <link href="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-content/app.css" rel="stylesheet" />
 </head>
 <body>
+
+<nav>
+    <ul>
+        <li>
+            <img src="db-logo.png" title="Deutsche Bank Logo" alt="Deutsche Bank" />
+        </li>
+        <li class="tmfaTooltip">My Courses &equiv;
+            <div class="tmfaTooltipMenu tmfaBottomSide">
+                <ul>
+                    <li>In progress</li>
+                    <li>Completed</li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a href="#!/admin/users"> All courses</a>
+        </li>
+        <li>Recommendations</li>
+        <li><input type="text" placeholder="Search &#x1F50D"></li>
+        <li class="tmfaTooltip">
+            <span id="user-name">{{globals.currentUser.username}}</span>
+            <span class="equiv">&equiv;</span>
+            <div class="tmfaTooltipMenu tmfaBottomSide">
+                <ul>
+                    <li>My courses</li>
+                    <li>
+                        <a href="#!/login" >Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</nav>
 
 <div class="jumbotron">
     <div class="container">
@@ -16,6 +51,11 @@
         </div>
     </div>
 </div>
+
+<footer>
+    Last Update: August 28, 2017<br>
+    Copyright © 2017 Deutsche Bank AG, Frankfurt am Main
+</footer>
 
 <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
@@ -32,8 +72,8 @@
 <!-- Fake user service for demo that uses local storage -->
 <!--<script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-services/user.service.local-storage.js"></script>-->
 
-<script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/home/home.controller.js"></script>
+<script src="home.controller.js"></script>
 <script src="login.controller.js"></script>
-<script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/register/register.controller.js"></script>
+<script src="register.controller.js"></script>
 </body>
 </html>
