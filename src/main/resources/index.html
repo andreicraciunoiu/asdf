@@ -4,9 +4,29 @@
     <meta charset="utf-8" />
     <title>AngularJS User Registration and Login Example & Tutorial</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="navbar.css" />
     <link href="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-content/app.css" rel="stylesheet" />
 </head>
 <body>
+
+<nav >
+    <ul>
+        <li class="tmfaTooltip">My Courses &#x25BC
+            <div class="tmfaTooltipMenu tmfaBottomSide">
+                <ul>
+                    <li>Enrolled</li>
+                    <li>In progress</li>
+                    <li>Completed</li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a href="#!/admin/users"> All courses</a>
+        </li>
+        <li>Recommendations</li>
+        <li><input type="text" placeholder="Search &#x1F50D"></li>
+    </ul>
+</nav>
 
 <div class="jumbotron">
     <div class="container">
@@ -32,8 +52,11 @@
 <!-- Fake user service for demo that uses local storage -->
 <!--<script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-services/user.service.local-storage.js"></script>-->
 
-<script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/home/home.controller.js"></script>
+<script src="home.controller.js"></script>
 <script src="login.controller.js"></script>
 <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/register/register.controller.js"></script>
+
+
+
 </body>
 </html>

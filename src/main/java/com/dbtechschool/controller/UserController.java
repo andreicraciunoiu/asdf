@@ -21,7 +21,7 @@ public class UserController {
 		return userService.getAll();
 	}
 
-	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
 	public User getById(@PathVariable(value = "id") Long id) {
 		return userService.getById(id);
 	}
