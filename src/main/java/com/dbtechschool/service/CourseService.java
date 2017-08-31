@@ -39,7 +39,7 @@ public class CourseService {
 		courseRepository.save(newCourse);
 	}
 	
-	public void updateCourseById(String name, Date start, Date end, String tags, String description, char difficulty, Long id) {
+	public void updateCourseById(String name, String start, String end, String tags, String description, char difficulty, Long id) {
 		courseRepository.updateCourseById(name, start, end, tags, description, difficulty, id);
 	}
 

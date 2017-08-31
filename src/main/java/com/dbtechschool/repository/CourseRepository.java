@@ -18,7 +18,7 @@ public interface CourseRepository extends CrudRepository<Course, Long> {
 	@Modifying
 	@Transactional
 	@Query("update Course c set c.name = ?1, c.start = ?2, c.end = ?3, c.tags = ?4, c.description = ?5, c.difficulty = ?6  where c.id = ?7")
-	int updateCourseById(String name, Date start, Date end, String tags, String description, char difficulty, Long id);
+	int updateCourseById(String name, String start, String end, String tags, String description, char difficulty, Long id);
 	
 	@Transactional
 	@Query("select c from Course c, Enrollment e, User u where u.id = ?1 and u.id = e.user.id and e.course.id = c.id")

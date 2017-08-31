@@ -22,10 +22,10 @@ public class Course {
 	private String name;
 
 	@Column(name = "START")
-	private Date start;
+	private String start;
 
 	@Column(name = "END")
-	private Date end;
+	private String end;
 
 	@Column(name = "TAGS")
 	private String tags;
@@ -39,7 +39,7 @@ public class Course {
 	public Course() {
 	}
 	
-	public Course(Long id, String name, Date start, Date end, String tags, String description, char difficulty) {
+	public Course(Long id, String name, String start, String end, String tags, String description, char difficulty) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -66,19 +66,19 @@ public class Course {
 		this.name = name;
 	}
 
-	public Date getStart() {
+	public String getStart() {
 		return start;
 	}
 
-	public void setStart(Date start) {
+	public void setStart(String start) {
 		this.start = start;
 	}
 
-	public Date getEnd() {
+	public String getEnd() {
 		return end;
 	}
 
-	public void setEnd(Date end) {
+	public void setEnd(String end) {
 		this.end = end;
 	}
 

@@ -24,7 +24,7 @@ public class Day {
 	private String name;
 
 	@Column(name = "DATE")
-	private Date date;
+	private String date;
 
 	@ManyToOne
 	@JoinColumn(name = "ID_COURSE", referencedColumnName = "ID_COURSE")
@@ -48,11 +48,11 @@ public class Day {
 		return this;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public Day setDate(Date date) {
+	public Day setDate(String date) {
 		this.date = date;
 		return this;
 	}
