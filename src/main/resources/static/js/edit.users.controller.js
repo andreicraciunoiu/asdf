@@ -1,10 +1,14 @@
-(function () {
+( function () {
+
+    'user strict';
 
     angular
         .module('app')
         .controller('EditUsersController', EditUsersController);
 
-    myApp.controller('EditUsersController', ['$scope', '$http', function ($scope, $http) {
+    EditUsersController.$inject = ['$scope', '$http'];
+
+    function EditUsersController($scope, $http) {
         console.log("In myController...");
 
         $scope.newUser = {};
@@ -110,6 +114,6 @@
         $scope.clearMessage = function () {
             $scope.message = "";
         }
-    }]);
+    }
 
 })();
