@@ -4,16 +4,13 @@ package com.dbtechschool.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.dbtechschool.model.User;
 import com.dbtechschool.service.UserService;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class UserController {
 
 	@Autowired
@@ -27,6 +24,11 @@ public class UserController {
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
 	public User getById(@PathVariable(value = "id") Long id) {
 		return userService.getById(id);
+	}
+
+	@RequestMapping(value = "/user/name/{username}", method = RequestMethod.GET)
+	public User getByUsername(@PathVariable(value = "username") String username) {
+		return userService.getByUsername(username);
 	}
 
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
