@@ -28,7 +28,7 @@
             })
 
             .when('/admin/users', {
-                controller: 'EditUserController',
+                controller: 'EditUsersController',
                 templateUrl: 'admin.users.view.html',
                 controllerAs: 'vm'
             })
