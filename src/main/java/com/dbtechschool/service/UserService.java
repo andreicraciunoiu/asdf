@@ -23,6 +23,10 @@ public class UserService {
 		return userRepository.findOne(id);
 	}
 
+	public User getByUsername(String username) {
+		return userRepository.findByUsername(username);
+	}
+
 	public void deleteById(Long id) {
 		userRepository.deleteRole(id);
 		userRepository.delete(id);

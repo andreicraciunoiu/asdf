@@ -36,6 +36,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
 	@Transactional
 	@Query(value = "delete from user_roles where id_user=?1", nativeQuery = true)
 	int deleteRole(Long id);
-	
+
+
 
 }
