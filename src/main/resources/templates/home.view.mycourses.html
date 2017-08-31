@@ -1,0 +1,39 @@
+<div class="container">
+    <hr>
+    <h2>All Courses</h2>
+    <span class="clearfix"></span>
+    </hr>
+
+    <div class="alert alert-info" ng-if="message">
+        <a href="#" class="close" ng-click="clearMessage()">&times;</a>
+        {{message}}
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Tags</th>
+            <th>Description</th>
+            <th>Difficulty</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr ng-repeat="course in vm.allCourses | filter:query">
+            <td>{{$index+1}}</td>
+            <td>{{course.name}}</td>
+            <td>{{course.start}}</td>
+            <td>{{course.end}}</td>
+            <td>{{course.tags}}</td>
+            <td>{{course.description}}</td>
+            <td>{{course.difficulty}}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
