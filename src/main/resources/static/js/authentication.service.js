@@ -17,8 +17,6 @@
 
         function Login(username, password, callback) {
 
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
              $timeout(function () {
                  var response;
                  UserService.GetByUsername(username)
@@ -31,16 +29,6 @@
                          callback(response);
                      });
              }, 1000);
-
-            /* Use this for real authentication
-             ----------------------------------------------*/
-            // $http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
-
-
-
         }
 
         function SetCredentials(username, password) {
@@ -49,7 +37,7 @@
             $rootScope.globals = {
                 currentUser: {
                     username: username,
-                    authdata: authdata
+                    authdata: authdata,
                 }
             };
 

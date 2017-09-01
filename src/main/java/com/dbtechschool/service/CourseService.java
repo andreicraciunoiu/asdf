@@ -48,6 +48,11 @@ public class CourseService {
 		return courseRepository.getCoursesByUserId(id);
 	}
 
+	public List<Course> getCoursesByUsername(String username) {
+		// TODO Auto-generated method stub
+		return courseRepository.getCoursesByUsername(username);
+	}
+
 	public List<String> getTrainersByCourseId(Long id) {
 		// TODO Auto-generated method stub
 		return courseRepository.getTrainersByCourseId(id);

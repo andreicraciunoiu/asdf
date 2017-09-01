@@ -1,17 +1,6 @@
-<!--<h1>Hi {{vm.user.firstName}}!</h1>-->
-<!--<p>You're logged in!!</p>-->
-<!--<h3>All courses:</h3>-->
-<!--<ul>-->
-    <!--<li ng-repeat="course in vm.allCourses">-->
-        <!--{{course.name}}-->
-    <!--</li>-->
-<!--</ul>-->
-<!--<p>&nbsp;</p>-->
-<!--<p><a href="#!/login" class="btn btn-primary">Logout</a></p>-->
-
 <div class="container">
     <hr>
-    <h2>My Courses</h2>
+    <h2>All Courses</h2>
     <span class="clearfix"></span>
     </hr>
 
@@ -34,7 +23,7 @@
         </thead>
         <tbody>
 
-        <tr ng-repeat="course in vm.myCourses | filter:query">
+        <tr ng-repeat="course in vm.allCourses | filter:query">
             <td>{{$index+1}}</td>
             <td>{{course.name}}</td>
             <td>{{course.start}}</td>
@@ -47,4 +36,3 @@
         </tbody>
     </table>
 
-</div>
