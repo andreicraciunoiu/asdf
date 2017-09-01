@@ -33,6 +33,12 @@
                 controllerAs: 'vm'
             })
 
+            .when('/admin/users', {
+                controller: 'EditUsersController',
+                templateUrl: 'admin.users.view.html',
+                controllerAs: 'vm'
+            })
+
             .otherwise({ redirectTo: '/login' });
     }
 

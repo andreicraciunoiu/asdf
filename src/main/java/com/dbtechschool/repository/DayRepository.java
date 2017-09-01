@@ -21,5 +21,5 @@ public interface DayRepository extends CrudRepository<Day, Long> {
 	@Modifying
 	@Transactional
 	@Query("update Day d set d.name = ?1, d.date = ?2 where d.id = ?3")
-	int updateDaybyId(String name, Date date, Long id);
+	int updateDaybyId(String name, String date, Long id);
 }

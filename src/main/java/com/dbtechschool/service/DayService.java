@@ -44,7 +44,7 @@ public class DayService {
 		return dayRepository.getDaysByCourseId(id);
 	}
 
-	public void updateDaybyId(String name, Date date, Long id) {
+	public void updateDaybyId(String name, String date, Long id) {
 		dayRepository.updateDaybyId(name, date, id);	
 	}
 
