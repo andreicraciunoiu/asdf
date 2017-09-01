@@ -3,17 +3,14 @@ package com.dbtechschool.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.dbtechschool.model.Course;
 import com.dbtechschool.model.DatesContainer;
 import com.dbtechschool.service.CourseService;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class CourseController {
 
 	@Autowired
@@ -37,6 +34,11 @@ public class CourseController {
 	@RequestMapping(value = "/courses/user/{id}", method = RequestMethod.GET)
 	public List<Course> getUserCourses(@PathVariable(value = "id") Long id) {
 		return courseService.getCoursesByUserId(id);
+	}
+
+	@RequestMapping(value = "/courses/username/{username}", method = RequestMethod.GET)
+	public List<Course> getUserCourses(@PathVariable(value = "username") String username) {
+		return courseService.getCoursesByUsername(username);
 	}
 	
 	@RequestMapping(value = "/courses/trainer/{id}", method = RequestMethod.GET)

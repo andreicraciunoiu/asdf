@@ -23,6 +23,10 @@ public interface CourseRepository extends CrudRepository<Course, Long> {
 	@Transactional
 	@Query("select c from Course c, Enrollment e, User u where u.id = ?1 and u.id = e.user.id and e.course.id = c.id")
 	List<Course> getCoursesByUserId(Long id);
+
+	@Transactional
+	@Query("select c from Course c, Enrollment e, User u where u.username = ?1 and u.id = e.user.id and e.course.id = c.id")
+	List<Course> getCoursesByUsername(String username);
 	
 	@Transactional
 	@Query("select s.trainer from Course c, Section s, Day d where c.id = ?1 and c.id = d.course.id and d.id = s.day.id")

@@ -11,6 +11,8 @@
 
         vm.user = null;
         vm.allUsers = [];
+        vm.allCourses = [];
+        vm.myCourses=[];
         vm.deleteUser = deleteUser;
 
         initController();
@@ -18,6 +20,8 @@
         function initController() {
             loadCurrentUser();
             loadAllUsers();
+            loadAllCourses();
+            loadMyCourses();
         }
 
         function loadCurrentUser() {
@@ -31,6 +35,20 @@
             UserService.GetAll()
                 .then(function (users) {
                     vm.allUsers = users;
+                });
+        }
+
+        function loadAllCourses() {
+            UserService.GetAllCourses()
+                .then(function (courses) {
+                    vm.allCourses = courses;
+                });
+        }
+
+        function loadMyCourses() {
+            UserService.GetMyCourses($rootScope.globals.currentUser.username)
+                .then(function (courses) {
+                    vm.myCourses = courses;
                 });
         }
 

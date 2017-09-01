@@ -14,18 +14,22 @@
         function register() {
             vm.dataLoading = true;
 
-
-
-            UserService.Create(vm.user)
-                .then(function (response) {
-                    if (true) {
-                        FlashService.Success('Registration successful', true);
-                        $location.path('/login');
+            UserService.GetByUsername(vm.user.username)
+                .then(function (responseUser) {
+                    if (!responseUser.username){
+                        UserService.Create(vm.user)
+                            .then(function (response) {
+                                    FlashService.Success('Registration successful', true);
+                                    $location.path('/login');
+                            })
                     } else {
-                        FlashService.Error(response.message);
+                        FlashService.Error('Username already exists');
                         vm.dataLoading = false;
                     }
+                    
                 });
+
+           ;
         }
     }
 

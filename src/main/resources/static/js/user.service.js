@@ -10,16 +10,27 @@
         var service = {};
 
         service.GetAll = GetAll;
+        service.GetAllCourses = GetAllCourses;
+        service.GetMyCourses = GetMyCourses;
         service.GetById = GetById;
         service.GetByUsername = GetByUsername;
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
 
+
         return service;
 
         function GetAll() {
             return $http.get('http://localhost:8080/usersrole').then(handleSuccess, handleError('Error getting all users'));
+        }
+
+        function GetAllCourses() {
+            return $http.get('http://localhost:8080/courses').then(handleSuccess, handleError('Error getting all courses'));
+        }
+
+        function GetMyCourses(usrn) {
+            return $http.get('http://localhost:8080/courses/username/' + usrn).then(handleSuccess, handleError('Error getting all courses'));
         }
 
         function GetById(id) {

@@ -15,6 +15,12 @@
                 controllerAs: 'vm'
             })
 
+            .when('/courses', {
+                controller: 'HomeController',
+                templateUrl: 'home.view.allcourses.html',
+                controllerAs: 'vm'
+            })
+
             .when('/login', {
                 controller: 'LoginController',
                 templateUrl: 'login.view.html',
