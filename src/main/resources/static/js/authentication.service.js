@@ -2,15 +2,15 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('ap')
         .factory('AuthenticationService', AuthenticationService);
 
     AuthenticationService.$inject = ['$http', '$cookies', '$rootScope', '$timeout', 'UserService'];
-    function AuthenticationService($http, $cookies, $rootScope, $timeout, UserService) {
+    function AuthenticationService($http, $rootScope, $timeout, UserService) {
         var service = {};
 
         service.Login = Login;
-        service.SetCredentials = SetCredentials;
+        service.SetCredentials = SetCredential;
         service.ClearCredentials = ClearCredentials;
 
         return service;

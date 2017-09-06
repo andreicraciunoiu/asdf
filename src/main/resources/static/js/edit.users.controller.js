@@ -16,7 +16,7 @@
         $scope.message = "";
 
         $scope.getUsers = function () {
-            $http.get('http://localhost:8080/usersrole')
+            $http.get('http://localhost:8080/userrole')
                 .success(function (data, status, headers, config) {
                     $scope.users = data;
                 })

@@ -1,7 +1,5 @@
 package com.dbtechschool.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,8 +19,6 @@ public class Course {
 	@Column(name = "NAME")
 	private String name;
 
-	@Column(name = "START")
-	private String start;
 
 	@Column(name = "END")
 	private String end;
@@ -39,11 +35,10 @@ public class Course {
 	public Course() {
 	}
 	
-	public Course(Long id, String name, String start, String end, String tags, String description, char difficulty) {
+	public Course(Long id, String name, String end, String tags, String description, char difficulty) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.start = start;
 		this.end = end;
 		this.tags = tags;
 		this.description = description;
@@ -64,14 +59,6 @@ public class Course {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getStart() {
-		return start;
-	}
-
-	public void setStart(String start) {
-		this.start = start;
 	}
 
 	public String getEnd() {
@@ -102,7 +89,4 @@ public class Course {
 		return difficulty;
 	}
 
-	public void setDifficulty(char difficulty) {
-		this.difficulty = difficulty;
-	}
 }

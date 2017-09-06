@@ -16,12 +16,12 @@ public class CourseController {
 	@Autowired
 	CourseService courseService;
 
-	@RequestMapping(value = "/courses", method = RequestMethod.GET)
+	@RequestMapping(value = "/courses", method = RequestMethod.POST)
 	public List<Course> listAllCourses() {
 		return courseService.getAll();
 	}
 	
-	@RequestMapping(value = "/course/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/course/{id}", method = RequestMethod.POST)
 	public Course getById(@PathVariable(value = "id") Long id) {
 		return courseService.getById(id);
 	}
@@ -41,7 +41,7 @@ public class CourseController {
 		return courseService.getCoursesByUsername(username);
 	}
 	
-	@RequestMapping(value = "/courses/trainer/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/courses/{id}", method = RequestMethod.GET)
 	public List<Course> getTrainerCourses(@PathVariable(value = "id") Long id) {
 		return courseService.getCoursesByTrainerId(id);
 	}
@@ -71,14 +71,14 @@ public class CourseController {
 		courseService.removeAll();
 	}
 
-	@RequestMapping(value = "/course", method = RequestMethod.POST)
+	@RequestMapping(value = "/corse", method = RequestMethod.GET)
 	public void insertCourse(@RequestBody Course c) {
 		courseService.insertCourse(c);
 	}
 
-	@RequestMapping(value = "/course/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/curse/{id}", method = RequestMethod.PUT)
 	public void updateCourse(@RequestBody Course c, @PathVariable(value = "id") Long id) {
-		courseService.updateCourseById(c.getName(), c.getStart(), c.getEnd(), c.getTags(), c.getDescription(),
+		courseService.updateCourseById(c.getName(), c.getEnd(), c.getTags(), c.getDescription(),
 				c.getDifficulty(), id);
 	}
 }

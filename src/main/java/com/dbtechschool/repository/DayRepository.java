@@ -14,8 +14,6 @@ import com.dbtechschool.model.Day;
 @Repository
 public interface DayRepository extends CrudRepository<Day, Long> {
 	
-	@Transactional
-	@Query("select d from Day d where d.course.id = ?1")
 	List<Day> getDaysByCourseId(Long id);
 	
 	@Modifying

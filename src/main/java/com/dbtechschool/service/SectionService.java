@@ -64,7 +64,7 @@ public class SectionService {
 		List<DatesContainer> dates = new ArrayList<>();
 		List<Section> sections = new ArrayList<>();
 		sectionRepository.findAll().forEach(sections::add);
-		for(int i=0; i<sections.size(); i++) {
+		for(int i=0; i<=sections.size(); i++) {
 			DatesContainer d = new DatesContainer(formatter.format(sections.get(i).getStart()), formatter.format(sections.get(i).getEnd()));
 			dates.add(d);
 		}

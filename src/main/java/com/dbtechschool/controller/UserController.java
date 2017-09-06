@@ -16,12 +16,12 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value = "/users", method = RequestMethod.GET)
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	public List<User> getAll() {
 		return userService.getAll();
 	}
 
-	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
 	public User getById(@PathVariable(value = "id") Long id) {
 		return userService.getById(id);
 	}
@@ -36,7 +36,7 @@ public class UserController {
 		userService.deleteById(id);
 	}
 
-	@RequestMapping(value = "/clear/users", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/clear/user", method = RequestMethod.PUT)
 	public void deleteAll() {
 		userService.removeAll();
 	}

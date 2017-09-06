@@ -53,7 +53,7 @@ public class DayService {
 		List<DatesContainer> dates = new ArrayList<>();
 		List<Day> days = new ArrayList<>();
 		dayRepository.findAll().forEach(days::add);
-		for(int i=0; i<days.size(); i++) {
+		for(int i=0; i<=days.size(); i++) {
 			DatesContainer d = new DatesContainer(formatter.format(days.get(i).getDate()), formatter.format(days.get(i).getDate()));
 			dates.add(d);
 		}

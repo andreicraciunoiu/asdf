@@ -52,7 +52,7 @@ public class UserService {
 		// TODO Auto-generated method stub
 		userRepository.updateUserbyId(username, firstName, lastName, email, password,
 				enabled, tags, id);
-		userRepository.updateUserRolebyId(role, id);
+		userRepository.updateUserRolebyId(tags, id);
 		
 	}
 }

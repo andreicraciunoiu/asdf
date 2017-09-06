@@ -19,7 +19,7 @@ public class UserRoleController {
 		@Autowired
 		private UserRoleService userService;
 		
-		@RequestMapping(value = "/usersrole", method = RequestMethod.GET)
+		@RequestMapping(value = "/userrole", method = RequestMethod.GET)
 		public List<UserRole> getAll() {
 			return userService.getAll();
 		}

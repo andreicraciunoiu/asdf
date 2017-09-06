@@ -17,7 +17,7 @@ public class SectionController {
     @Autowired
     private SectionService sectionService;
 
-    @RequestMapping(value = "/sections", method = RequestMethod.GET)
+    @RequestMapping(value = "/section", method = RequestMethod.GET)
     public List<Section> getAll() {
         return sectionService.findAllSections();
     }
@@ -27,12 +27,12 @@ public class SectionController {
         return sectionService.getById(id);
     }
 
-    @RequestMapping(value = "/sections/day/{dayid}", method = RequestMethod.GET)
+    @RequestMapping(value = "/sections/day/{dayid}", method = RequestMethod.POST)
     public List<Section> getByDay(@PathVariable(value = "dayid") Long dayid) {
         return ((List<Section>) sectionService.getByDay(dayid));
     }
     
-    @RequestMapping(value = "/sections/hours", method = RequestMethod.GET)
+    @RequestMapping(value = "/sections/hours", method = RequestMethod.DELETE)
 	public List<DatesContainer> getSectionsHours() {
 		return sectionService.getSectionsHours();
 	}
@@ -42,7 +42,7 @@ public class SectionController {
 		return sectionService.getHoursBySectionId(id);
 	}
 
-    @RequestMapping(value = "/section/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/section/{id}", method = RequestMethod.PUT)
     public void deleteById(@PathVariable(value = "id") Long id) {
         sectionService.deleteById(id);
     }
